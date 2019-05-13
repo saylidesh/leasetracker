@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block body %}
+<h2>{{ the_title }}</h2>
+<p>Resident Details are as below:</p>
+<form action="/listResident" method="get">
+<table border="1">
+<ul>
+<tr>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Building No</th>
+<th>Apartment No</th>
+<th>Lease Begin Date</th>
+<th>Lease End Date</th>
+</tr>
+{% for resident in residents %}
+<tr>
+<td>
+{{ resident[0]}}
+<td>
+{{ resident[1]}}
+</td>
+<td>
+{{ resident[2]}}
+</td>
+<td>
+{{ resident[3]}}
+</td>
+<td>
+{{ resident[4]}}
+</td>
+<td>
+{{ resident[5]}}
+</td>
+<td>
+{{ resident[6]}}
+</td>
+<td>
+{{ resident[7]}}
+</td>
+<td>
+{{ resident[8]}}
+</td>
+</tr>
+{% endfor %}  
+</ul>
+</table>
+</form>
+
+<button name="action" type="button" value="Home" onclick="window.location.href='/'">Home</button>
+{% endblock %}

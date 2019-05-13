@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block body %}
+<h2>{{ the_title }}</h2>
+<form action="/direct" method="post">
+<table>
+<tr>
+<td>
+	Choose your Action for Application:
+</td>
+<td>
+	<button name="action" type="submit" value="Search">Search
+		Application</button>
+</td>
+<td>
+	<button name="action" type="submit" value="Submit">Submit
+		Application</button>
+</td>
+<td>
+	<button name="action" type="submit" value="List">Application List</button>
+</td>
+</tr>
+</table>
+</form>
+<br></br>
+<form action="/directResident" method="post">
+<table>
+<tr>
+<td>
+	Choose your Action for Resident:
+</td>
+<td>
+	<button name="action" type="submit" value="Search">Search
+		Resident</button>
+</td>
+<td>
+	<button name="action" type="submit" value="Submit">Submit
+		Resident</button>
+</td>
+<td>
+	<button name="action" type="submit" value="List">Resident List</button>
+</td>
+</tr>
+</table>
+</form>
+{% endblock %}

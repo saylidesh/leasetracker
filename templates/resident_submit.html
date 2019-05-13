@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% block body %}
+
+<script> 
+function validate()        
+{ 
+	var application_id = document.getElementById('application_id');  
+    var first_name = document.getElementById('first_name');  
+    var middle_name = document.getElementById('middle_name');    
+    var last_name = document.getElementById('last_name');    
+    var building_no =  document.getElementById('building_no');  
+    var apartment_no = document.getElementById('apartment_no');  
+    var lease_begin_dt = document.getElementById('lease_begin_dt');  
+    var lease_end_dt = document.getElementById('lease_end_dt');  
+    var email_id =  document.getElementById('email_id');  
+    var contact_no = document.getElementById('contact_no'); 
+   
+    if (application_id.value == "")                                  
+    { 
+        window.alert("Please enter Application Id."); 
+        application_id.focus(); 
+        return false; 
+    } 
+    if (first_name.value == "")                                  
+    { 
+        window.alert("Please enter first name."); 
+        first_name.focus(); 
+        return false; 
+    } 
+ 
+    if (middle_name.value == "")                                  
+    { 
+        window.alert("Please enter middle name."); 
+        middle_name.focus(); 
+        return false; 
+    } 
+ 
+    if (last_name.value == "")                                  
+    { 
+        window.alert("Please enter last name."); 
+        last_name.focus(); 
+        return false; 
+    } 
+    
+    if (building_no.value == "")                                  
+    { 
+        window.alert("Please enter building no"); 
+        building_no.focus(); 
+        return false; 
+    } 
+    
+    if (apartment_no.value == "")                                  
+    { 
+        window.alert("Please enter apartment no"); 
+        apartment_no.focus(); 
+        return false; 
+    } 
+    if (lease_begin_dt.value == "")                                  
+    { 
+        window.alert("Please enter lease begin date."); 
+        lease_begin_dt.focus(); 
+        return false; 
+    } 
+    if (lease_end_dt.value == "")                                  
+    { 
+        window.alert("Please enter lease end date."); 
+        lease_end_dt.focus(); 
+        return false; 
+    } 
+ 
+    if (contact_no.value == "")                                  
+    { 
+        window.alert("Please enter contact no."); 
+        contact_no.focus(); 
+        return false; 
+    } 
+ 
+    if (email_id.value == "")                                  
+    { 
+        window.alert("Please enter Email Id."); 
+        email_id.focus(); 
+        return false; 
+    } 
+   
+    return true; 
+}</script> 
+
+<h2>{{ the_title }}</h2>
+<form method='POST' action='/submitResident' onsubmit="return validate()">
+	<table>
+		<p>Resident form for Countryside Meadows</p>
+		
+		{% if  error_msg %}
+		<span style="color:red">Application Id does not exist</span>
+		{% endif %}
+		
+		<tr>
+			<td>Application Id:</td>
+			<td><input id='application_id' name='application_id' type='TEXT' width='15' value={{application_id}}></td>
+		</tr>		
+		<tr>
+			<td>First Name:</td>
+			<td><input id='first_name' name='first_name' type='TEXT'  width='15' value={{first_name}}></td>
+		</tr>
+		<tr>
+			<td>Middle Name:</td>
+			<td><input id='middle_name' name='middle_name' type='TEXT' width='15' value={{middle_name}} ></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><input id='last_name' name='last_name' type='TEXT' width='20' value={{last_name}} ></td>
+		</tr>
+		<tr>
+			<td>Building No:</td>
+			<td><input id='building_no' name='building_no' type='TEXT' width='40' value={{building_no}} ></td>
+		</tr>
+		<tr>
+			<td>Apartment No:</td>
+			<td><input id='apartment_no' name='apartment_no' type='TEXT' width='40' value={{apartment_no}} ></td>
+		</tr>
+		<tr>
+			<td>Lease Begin Date:</td>
+			<td><input id='lease_begin_dt' name='lease_begin_dt' type='TEXT' width='40' value={{lease_begin_dt}} ></td>
+		</tr>
+		<tr>
+			<td>Lease End Date:</td>
+			<td><input id='lease_end_dt' name='lease_end_dt' type='TEXT' width='40' value={{lease_end_dt}} ></td>
+		</tr>
+		<tr>
+			<td>Contact No:</td>
+			<td><input id='contact_no' name='contact_no' type='TEXT' width='40' value={{contact_no}}></td>
+		</tr>
+		<tr>
+			<td>Email Id:</td>
+			<td><input id='email_id' name='email_id' type='TEXT' width='40' value={{email_id}} ></td>
+		</tr>
+	</table>
+	<p>When you're ready, submit the details to save new Resident Lease Information:</p>
+	<p>
+		<input value='Submit!' type='SUBMIT'>
+		<button name="action" type="button" value="Home" onclick="window.location.href='/'">Home</button>
+		
+	</p>
+</form>
+
+{% endblock %}

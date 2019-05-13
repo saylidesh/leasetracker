@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block body %}
+<script> 
+function validate()        
+{ 
+   
+    var email_id =  document.getElementById('email_id');  
+   
+ 
+    if (email_id.value == "")                                  
+    { 
+        window.alert("Please enter Email Id."); 
+        email_id.focus(); 
+        return false; 
+    } 
+   
+    return true; 
+}</script> 
+
+<h2>{{ the_title }}</h2>
+<form method='POST' action='/searchResident' onsubmit="return validate()">
+	<table>
+		<p>Enter the Resident Email ID to search for the Resident Lease Information:</p>
+		
+		{% if  error_msg %}
+		<span style="color:red">Email Id does not exist</span>
+		{% endif %}
+		
+		<tr>
+			<td>Email Id:</td>
+			<td><input id='email_id' name='email_id' type='TEXT' width='40' value={{email_id}}></td>
+		</tr>
+	</table>
+	<p>When you're ready, click on search!</p>
+	<p>
+		<input value='Search!' type='SUBMIT'>
+		<button name="action" type="button" value="Home" onclick="window.location.href='/'">Home</button>
+		
+	</p>
+</form>
+
+{% endblock %}

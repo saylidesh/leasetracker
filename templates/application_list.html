@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block body %}
+<h2>{{ the_title }}</h2>
+<p>Application Details are as below:</p>
+<form action="/listApplication" method="get">
+<table border="1">
+<ul>
+<tr>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Phone</th>
+</tr>
+{% for application in applications %}
+<tr>
+<td>
+{{ application[0]}}
+<td>
+{{ application[1]}}
+</td>
+<td>
+{{ application[2]}}
+</td>
+<td>
+{{ application[3]}}
+</td>
+<td>
+{{ application[4]}}
+</td>
+</tr>
+{% endfor %}  
+</ul>
+</table>
+</form>
+
+<button name="action" type="button" value="Home" onclick="window.location.href='/'">Home</button>
+{% endblock %}

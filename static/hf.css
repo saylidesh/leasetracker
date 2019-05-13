@@ -1,0 +1,29 @@
+@charset "UTF-8";
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.disable{
+pointer-events:none;
+background:grey;
+}
